@@ -1,1 +1,223 @@
 fix all 10 bugs
+import React from 'react';
+import { Container, Box, Button } from '@mui/material';
+
+const VerticalButtons = () => {
+  return (
+    <Container>
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2,mt:2,mb:2}}>
+        <Button variant="contained">Button 1</Button>
+        <Button variant="contained">Button 2</Button>
+        <Button variant="contained">Button 3</Button>
+      </Box>
+    </Container>
+  );
+};
+
+export default VerticalButtons;
+import React from 'react';
+import { Container, Box, Button } from '@mui/material';
+
+const HorizontalButtons = () => {
+  return (
+    <Container>
+      <Box sx={{ display: 'flex', justifyContent: 'space-around', gap: 40 }}>
+        <Button variant="contained">Button 1</Button>
+        <Button variant="contained">Button 2</Button>
+        <Button variant="contained">Button 3</Button>
+      </Box>
+    </Container>
+  );
+};
+
+export default HorizontalButtons;
+import React from 'react';
+import { AppBar, Toolbar, Button, Typography } from '@mui/material';
+
+const AppBarWithButton = () => {
+  return (
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6" sx={{ flexGrow: 1 }}>My App</Typography>
+        <Button color="inherit">Login</Button>
+        <Button color="inherit">signup</Button>
+      </Toolbar>
+    </AppBar>
+  );
+};
+
+export default AppBarWithButton;
+import React from 'react';
+import { Drawer, List, ListItem, ListItemText, Button } from '@mui/material';
+
+const SidebarWithButton = () => {
+  return (
+    <Drawer variant="permanent">
+      <List>
+        <ListItem>
+          <Button variant="contained">Sidebar Button</Button>
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="Home"/>
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="profile" />
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="settings" />
+        </ListItem>
+      </List>
+    </Drawer>
+  );
+};
+
+export default SidebarWithButton;
+import React from 'react';
+import { Container, Box, Button } from '@mui/material';
+
+const CenteredButton = () => {
+  return (
+    <Container sx={{ height: '100vh' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%',gap : 3}}>
+        <Button variant="contained">Button1</Button>
+        <Button variant="contained">Button2</Button>
+      </Box>
+    </Container>
+  );
+};
+
+export default CenteredButton;
+import React from 'react';
+import { Container, Grid, Button } from '@mui/material';
+
+const ResponsiveGridButtons = () => {
+  return (
+    <Container>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={6} md={4}>
+          <Button variant="contained" fullWidth>Button 1</Button>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Button variant="contained" fullWidth>Button 2</Button>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Button variant="contained" fullWidth>Button 3</Button>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Button variant="contained" fullWidth>Button 4</Button>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Button variant="contained" fullWidth>Button 5</Button>
+        </Grid>
+      </Grid>
+    </Container>
+  );
+};
+export default ResponsiveGridButtons;
+import React from 'react';
+import { Container, Fab, Button } from '@mui/material';
+
+const BottomButton = () => {
+  return (
+    <Container sx={{ height: '100vh' }}>
+      <Fab sx={{ position : 'fixed',right : 16,bottom : 16 }}>
+        <Button variant="contained">Button</Button>
+      </Fab>
+    </Container>
+  );
+};
+
+export default BottomButton;
+import React from 'react';
+import { Card, CardActions, CardContent, Button, Typography } from '@mui/material';
+
+const CardWithButton = () => {
+  return (
+    <Card>
+      <CardContent>
+        <Typography variant="h5">Card Title</Typography>
+        <Typography variant="body2">Card content goes here.</Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small">Accept</Button>
+        <Button size="small">decline</Button>
+      </CardActions>
+    </Card>
+  );
+};
+
+export default CardWithButton;
+import React, { useState } from 'react';
+import { Dialog, DialogActions, DialogContent, DialogTitle, Button, Typography } from '@mui/material';
+
+const DialogWithButton = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <Button variant="outlined" onClick={handleClickOpen}>
+        Open Dialog
+      </Button>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Dialog Title</DialogTitle>
+        <DialogContent>
+          <Typography variant="body2">Dialog content goes here.</Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>confirm</Button>
+          <Button onClick={handleClose}>cancel</Button>         
+        </DialogActions>
+      </Dialog>
+    </div>
+  );
+};
+
+export default DialogWithButton;
+import React from 'react';
+import { 
+  AppBar, Toolbar, Typography, Button, Container, Grid, Box 
+} from '@mui/material';
+
+const LayoutExample = () => {
+  return (
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" sx={{ flexGrow: 1 }}>My App</Typography>
+          <Button color="inherit">Login</Button>
+          <Button color="inherit">Signup</Button>
+        </Toolbar>
+      </AppBar>
+
+      <Container sx={{ flexGrow: 1, my: 2 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6} md={4}>
+            <Button variant="contained" fullWidth>Button 1</Button>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Button variant="contained" fullWidth>Button 2</Button>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Button variant="contained" fullWidth>Button 3</Button>
+          </Grid>
+        </Grid>
+      </Container>
+
+      <Box component="footer" sx={{ bgcolor: 'background.paper', p: 2 }}>
+        <Typography variant="body2" color="text.secondary" align="center">
+          © 2024 My App. All rights reserved.
+        </Typography>
+      </Box>
+    </Box>
+  );
+};
+
+export default LayoutExample;
