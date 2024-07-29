@@ -1,1 +1,19 @@
 fix all 10 bugs
+                                                       \\FIRST PROGRAM
+import React from 'react';
+import { Container, Box, Button } from '@mui/material';
+import { CenterFocusStrong } from '@mui/icons-material';
+
+const VerticalButtons = () => {
+  return (
+    <Container>
+      <Box sx={{ display: 'flex', flexDirection: 'column',gap: 5 ,mt: 5,mb: 60}}>
+        <Button variant="contained">shashi preetham</Button></Box>
+        <Box sx={{ display: 'flex', flexDirection: 'column',gap: 5 ,mt:70,mb: 50}}>
+        <Button variant="contained">Bharath </Button> 
+        </Box>
+    </Container>
+  );
+};
+
+export default VerticalButtons;
