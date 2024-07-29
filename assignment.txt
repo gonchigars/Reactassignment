@@ -1,1 +1,72 @@
 fix all 10 bugs
+
+
+import React from 'react';
+import { AppBar, Box, Button, CardActions, Container,  DialogActions,  Drawer, ListItem,  Toolbar, Typography } from '@mui/material';
+
+function App() {
+  return (
+ <Box>
+  <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" sx={{ flexGrow: 1 }}>My Hub</Typography>
+          <Button color="inherit">Login</Button>
+          <Button color="inherit">Signup</Button>
+        </Toolbar>
+      </AppBar>
+      
+
+      <Drawer variant="permanent">
+        <List>
+          <ListItem button>
+            <Button fullWidth>Home</Button>
+          </ListItem>
+          <ListItem button>
+            <Button fullWidth>Profile</Button>
+          </ListItem>
+          <ListItem button>
+            <Button fullWidth>Settings</Button>
+          </ListItem>
+        </List>
+      </Drawer>
+  
+  
+    <Container
+    maxWidth="sm" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mt: 5 }}>
+      <Button variant="contained" sx={{ mt: 2, mb: 2 }}>Button 1</Button>
+      <Button variant="contained" sx={{ mt: 2, mb: 2 }}>Button 2</Button>
+      <Button variant="contained" sx={{ mt: 2, mb: 2 }}>Button 3</Button>
+   </Container>
+
+   <Container
+        maxWidth="sm"
+        sx={{ display: 'flex', justifyContent: 'space-between', mt: 5, mx: 2 }}
+      >
+        <Button variant="contained">Button A</Button>
+        <Button variant="contained">Button B</Button>
+        <Button variant="contained">Button C</Button>
+      </Container>
+
+   <Container maxWidth="sm" 
+   sx={{display:'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 2}}>
+    <Button variant='contained'>Center Button</Button>
+   </Container>
+    
+   <CardActions>
+    <Button size='small'>Acept</Button>
+    <Button size='small'>Dicline</Button>
+   </CardActions>
+
+   
+   </Box>
+
+   
+    
+   
+
+    
+  );
+}
+
+export default App;
+
