@@ -1,1 +1,128 @@
-fix all 10 bugs
+import React, { useState } from 'react';
+import {Dialog, DialogActions, DialogContent, DialogTitle, Card, CardActions, CardContent, Grid, Drawer, List, ListItem, ListItemText, AppBar, Toolbar, Typography, Container, Box, Button
+} from '@mui/material';
+
+const Layout = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <Container>
+      <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        
+        {/* AppBar with Multiple Buttons */}
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" sx={{ flexGrow: 1 }}>My App</Typography>
+            <Button color="inherit">Login</Button>
+            <Button color="inherit">Signup</Button>
+          </Toolbar>
+        </AppBar>
+
+        {/* Sidebar with Multiple Buttons */}
+        <Drawer variant="permanent">
+          <List>
+            <ListItem>
+              <Button variant="contained">Sidebar</Button>
+            </ListItem>
+            <ListItem button>
+              <ListItemText primary="Home" />
+            </ListItem>
+            <ListItem button>
+              <ListItemText primary="Profile" />
+            </ListItem>
+            <ListItem button>
+              <ListItemText primary="Settings" />
+            </ListItem>
+          </List>
+        </Drawer>
+
+        <Typography variant="h4" sx={{ mt: 2 }}>Welcome to My App</Typography>
+        
+        {/* Vertical Button Layout with Margins */}
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, mt: 2 }}>
+          <Button variant="contained" sx={{ mt: 1, mb: 1 }}>Vertical Button 1</Button>
+          <Button variant="contained" sx={{ mt: 1, mb: 1 }}>Vertical Button 2</Button>
+          <Button variant="contained" sx={{ mt: 1, mb: 1 }}>Vertical Button 3</Button>
+        </Box>
+        
+        {/* Horizontal Button Layout with Equal Spacing */}
+        <Box sx={{ display: 'flex', justifyContent: 'space-around', gap: 2, mx: 5, mt: 5 }}>
+          <Button variant="contained">Horizontal Button 1</Button>
+          <Button variant="contained">Horizontal Button 2</Button>
+          <Button variant="contained">Horizontal Button 3</Button>
+        </Box>
+        
+        {/* Centered Content with Spacing */}
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 2, mt: 5 }}>
+          <Button variant="contained" sx={{ mt: 2, mb: 2 }}>Centered Button</Button>
+        </Box>
+        
+        {/* Responsive Grid with Dynamic Buttons */}
+        <Container sx={{ flexGrow: 1, my: 2 }}>
+          <Grid container spacing={2}>
+            <Grid item xs={12} sm={6} md={4}>
+              <Button variant="contained" fullWidth>Dynamic Button 1</Button>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Button variant="contained" fullWidth>Dynamic Button 2</Button>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4}>
+              <Button variant="contained" fullWidth>Dynamic Button 3</Button>
+            </Grid>
+          </Grid>
+        </Container>
+        
+        {/* Card with Multiple Buttons */}
+        <Card>
+          <CardContent>
+            <Typography variant="h5">Card Title</Typography>
+            <Typography variant="body2">Card content goes here.</Typography>
+          </CardContent>
+          <CardActions>
+            <Button size="small">Accept</Button>
+            <Button size="small">Decline</Button>
+          </CardActions>
+        </Card>
+        
+        {/* Dialog with Confirmation Buttons */}
+        <div>
+          <Button variant="outlined" onClick={handleClickOpen}>
+            Open Dialog
+          </Button>
+          <Dialog open={open} onClose={handleClose}>
+            <DialogTitle>Dialog Title</DialogTitle>
+            <DialogContent>
+              <Typography variant="body2">Dialog content goes here.</Typography>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleClose}>Confirm</Button>
+              <Button onClick={handleClose}>Cancel</Button>
+            </DialogActions>
+          </Dialog>
+        </div>
+        
+        {/* Fixed Button at the Bottom-Right Corner */}
+        <Button variant="contained" sx={{ position: 'fixed', bottom: 16, right: 16 }}>
+          Fixed Button
+        </Button>
+        
+        {/* Layout with Header, Main Content, and Footer */}
+        <Box component="footer" sx={{ bgcolor: 'background.paper', p: 2 }}>
+          <Typography variant="body2" color="text.secondary" align="center">
+            © 2024 My App. All rights reserved.
+          </Typography>
+        </Box>
+      </Box>
+    </Container>
+  );
+};
+
+export default Layout;
