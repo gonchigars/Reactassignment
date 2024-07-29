@@ -1,1 +1,289 @@
 fix all 10 bugs
+// Assignment 1: Vertical Button Layout with Margins
+// Task: Create a vertical button layout similar to Exercise 1, but add top and bottom margins to each button.
+
+// Hint: Use the sx prop with mt (margin-top) and mb (margin-bottom) for the Button components.
+import React from 'react';
+import { Container, Box, Button } from '@mui/material';
+
+const VerticalButtons = () => {
+  return (
+    <Container>
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2 }}>
+        <Button variant="contained" sx={{ mt: 2, mb: 2 }}>OK</Button>
+        <Button variant="contained" sx={{ mt: 2, mb: 2 }}>SUBMIT</Button>
+        <Button variant="contained" sx={{ mt: 2, mb: 2 }}>CLEAR</Button>
+      </Box>
+    </Container>
+  );
+};
+
+export default VerticalButtons;
+
+// Assignment 2: Horizontal Button Layout with Equal Spacing
+// Task: Arrange buttons in a horizontal line with equal spacing between them, and add left and right margins to the container.
+// Hint: Use the sx prop with mx (margin-left and margin-right) for the Container component.
+import { Container, Box, Button } from '@mui/material';
+
+const HorizontalButtons = () => {
+  return (
+    <Container sx={{mx:30 }}>
+      <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 2 }}>
+        <Button variant="contained" sx={{mt:0 }} >OK</Button>
+        <Button variant="contained" >SUBMIT</Button>
+        <Button variant="contained" >CLEAR</Button>
+      </Box>
+    </Container>
+  );
+};
+
+export default HorizontalButtons;
+
+// Assignment 3: AppBar with Multiple Buttons
+// Task: Add multiple buttons (e.g., "Login", "Signup") to the AppBar, aligned to the right side.
+
+// Hint: Use flexGrow: 1 on the Typography component to push the buttons to the right, and add multiple Button components in the Toolbar.
+import React from 'react';
+import { AppBar, Toolbar, Button, Typography } from '@mui/material';
+
+const AppBarWithButton = () => {
+  return (
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6"  sx={{ml:24 ,flexGrow: 1 }}>Amazon </Typography>
+        <Button color="inherit">Login</Button>
+        <Button color="inherit">Signup</Button>
+        <Button color="inherit">Log in with Google</Button>
+      </Toolbar>
+    </AppBar>
+  );
+};
+
+export default AppBarWithButton;
+
+// Assignment 4: Sidebar with Multiple Buttons
+// Task: Create a sidebar with multiple buttons, each representing a different navigation option (e.g., "Home", "Profile", "Settings").
+
+// Hint: Use a Drawer component with multiple ListItem components, each containing a Button.
+import React from 'react';
+import { Drawer, List, ListItem, ListItemText, Button } from '@mui/material';
+
+const SidebarWithButton = () => {
+  return (
+    <Drawer variant="permanent">
+      <List>
+        <ListItem>
+          <Button variant="contained">Sidebar Button</Button>
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary=" Home" />
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="Profile" />
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="Settings" />
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="Dark Mode" />
+        </ListItem>
+      </List>
+    </Drawer>
+  );
+};
+
+export default SidebarWithButton;
+
+// Assignment 5: Centered Content with Spacing
+// Task: Center a button horizontally and vertically inside a container, and add some spacing above and below the button.
+
+// Hint: Use flexDirection: 'column', justifyContent: 'center', alignItems: 'center', and gap: 2 on the Box component.\
+import React from 'react';
+import { Container, Box, Button } from '@mui/material';
+
+const CenteredButton = () => {
+  return (
+    <Container sx={{ height: '100vh' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' , gap: 2}}>
+        <Button variant="contained" sx={{mt:2,mx:2}}>Click</Button>
+      </Box>
+    </Container>
+  );
+};
+
+export default CenteredButton;
+
+// Assignment 6: Responsive Grid with Dynamic Buttons
+// Task: Create a responsive grid layout with buttons that adjust their size based on the screen width, and add a few more buttons to test the responsiveness.
+
+// Hint: Use different xs, sm, and md values for the Grid items to control their layout at various screen sizes.
+import React from 'react';
+import { Container, Grid, Button,Typography } from '@mui/material';
+
+const ResponsiveGridButtons = () => {
+  return (
+    <Container sx={{ ml:30,mt:10}}>
+        <Typography variant='h6' gutterBottom='center'>
+        Responsive Grid with Dynamic Buttons
+        </Typography>
+      <Grid container spacing={2}>
+        <Grid item ml={2} xs={12} sm={6} md={4}>
+          <Button variant="contained" fullWidth>Button 1</Button>
+        </Grid>
+        <Grid item ml={2} xs={12} sm={6} md={4}>
+          <Button variant="contained" fullWidth>Button 2</Button>
+        </Grid>
+        <Grid item ml={2} xs={12} sm={6} md={4}>
+          <Button variant="contained" fullWidth>Button 3</Button>
+        </Grid>
+        <Grid item ml={2} xs={12} sm={6} md={4}>
+          <Button variant="contained" fullWidth>Button 4</Button>
+        </Grid>
+        <Grid item ml={2} xs={12} sm={6} md={4}>
+          <Button variant="contained" fullWidth>Button 5</Button>
+        </Grid>
+        <Grid item ml={2} xs={12} sm={6} md={4}>
+          <Button variant="contained" fullWidth>Button 6</Button>
+        </Grid>
+      </Grid>
+    </Container>
+  );
+};
+
+export default ResponsiveGridButtons;
+
+// Assignment 7: Fixed Button at the Bottom-Right Corner
+// Task: Place a button fixed at the bottom-right corner of the screen, regardless of scrolling.
+
+// Hint: Use the sx prop with position: 'fixed', bottom: 16, and right: 16 for the Button component.
+import React from 'react';
+import { Container, Box, Button } from '@mui/material';
+
+const BottomButton = () => {
+  return (
+    <Container sx={{ height: '100vh' }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', height: '100%' }}>
+        <Button variant="contained" sx={{position:"fixed",bottom:16,right:16}}>FeedBack</Button>
+      </Box>
+    </Container>
+  );
+};
+
+export default BottomButton;
+
+// Assignment 8: Card with Multiple Buttons
+// Task: Create a card component with multiple buttons at the bottom (e.g., "Accept", "Decline").
+
+// Hint: Use CardActions with multiple Button components inside the card.
+import React from 'react';
+import { Card, CardActions, CardContent, Button, Typography } from '@mui/material';
+
+const CardWithButton = () => {
+  return (
+    <Card>
+      <CardContent sx={{ml:25}}>
+        <Typography variant="h5">Shreyash Arghode</Typography>
+        <Typography variant="body2">Mob no.- 8668493596 , <br></br>Artificial Intillegence
+            <br></br> Address-Qr no. 3/9 Raje Raguji Nagar Opp Kamla Nehru Colege , Nagpur</Typography>
+      </CardContent>
+      <CardActions >
+        <Button sx={{ml:25}} size="small">Learn More</Button>
+      </CardActions>
+      <CardActions >
+        <Button sx={{ml:25}} size="small">Connect With Us!</Button>
+      </CardActions>
+      <CardActions >
+        <Button sx={{ml:25}} size="small">Join Our Telegram Channel !</Button>
+      </CardActions>
+    </Card>
+  );
+};
+
+export default CardWithButton;
+
+// Assignment 9: Dialog with Confirmation Buttons
+// Task: Create a dialog that opens when a button is clicked. Inside the dialog, add two buttons: "Confirm" and "Cancel".
+
+// Hint: Use DialogActions for the buttons and manage the dialog state with useState.
+import React, { useState } from 'react';
+import { Dialog, DialogActions, DialogContent, DialogTitle, Button, Typography,Box } from '@mui/material';
+
+const DialogWithButton = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <Box sx={{ml:25}}>
+      <Button variant="outlined" onClick={handleClickOpen}>
+        Submit
+      </Button></Box>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle >Confirm Action</DialogTitle>
+        <DialogContent>
+          <Typography variant="body2" >Are you Sure .</Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose} >Confirm</Button>
+        </DialogActions>
+        <DialogActions>
+          <Button onClick={handleClose} >Cancel</Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+  );
+};
+
+export default DialogWithButton;
+
+// Assignment 10: Layout with Header, Main Content, and Footer
+// Task: Create a layout with an AppBar at the top, a main content area with a grid of buttons, and a footer at the bottom.
+
+// Hint: Use Box for the overall layout, AppBar for the header, Container with Grid for the main content, and Box with sx={{ position: 'relative', bottom: 0 }} for the footer.
+import React from 'react';
+import { 
+  AppBar, Toolbar, Typography, Button, Container, Grid, Box 
+} from '@mui/material';
+
+const LayoutExample = () => {
+  return (
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography  variant="h6" sx={{ml:25, flexGrow: 1 }}>My App</Typography>
+          <Button  color="inherit">Login</Button>
+          <Button color="inherit">Signup</Button>
+        </Toolbar>
+      </AppBar>
+
+      <Container sx={{ml:25, flexGrow: 1, my: 2 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6} md={4}>
+            <Button variant="contained" fullWidth>Button 1</Button>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Button variant="contained" fullWidth>Button 2</Button>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Button variant="contained" fullWidth>Button 3</Button>
+          </Grid>
+        </Grid>
+      </Container>
+
+      <Box component="footer" sx={{ bgcolor: 'background.paper', p: 2 }}>
+        <Typography variant="body2" color="text.secondary" align="center">
+          © 2024 My App. All rights reserved.
+        </Typography>
+      </Box>
+    </Box>
+  );
+};
+
+export default LayoutExample;
