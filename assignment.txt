@@ -1,1 +1,242 @@
-fix all 10 bugs
+Assignment:-1
+import React from 'react';
+import { Container, Box, Button } from '@mui/material';
+
+const VerticalButtons = () => {
+  return (
+    <Container>
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2,ml:20 }}>
+        <Button variant="contained"sx={{mt:2,mb:2}}>OK</Button>
+        <Button variant="contained"sx={{mt:2,mb:2}}>CLEAR</Button>
+        <Button variant="contained"sx={{mt:2,mb:2}}>SUBMIT</Button>
+      </Box>
+    </Container>
+  );
+};
+export default VerticalButtons;
+
+
+Assignment:-2
+import React from 'react';
+import { Container, Box, Button } from '@mui/material';
+
+const HorizontalButtons = () => {
+  return (
+    <Container sx={{mx:2}}>
+      <Box sx={{ display: 'flex', justifyContent: 'space-around', gap: 1 ,ml:15 }}>
+        <Button variant="contained">Button 1</Button>
+        <Button variant="contained">Button 2</Button>
+        <Button variant="contained">Button 3</Button>
+      </Box>
+    </Container>
+  );
+};
+export default HorizontalButtons;
+
+
+Assignment:-3
+import React from 'react';
+import { AppBar, Toolbar, Button, Typography } from '@mui/material';
+
+const AppBarWithButton = () => {
+  return (
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6" sx={{ flexGrow: 1,ml:15 }}>Facebook</Typography>
+        <Button color="inherit">Login</Button>
+        <Button color="inherit">Signup</Button>
+        <Button color="inherit">Help</Button>
+        <Button color="inherit"></Button>
+      </Toolbar>
+    </AppBar>
+  );
+};
+export default AppBarWithButton;
+
+
+Assignment:-4
+import React from 'react';
+import { Drawer, List, ListItem, ListItemText, Button } from '@mui/material';
+
+const SidebarWithButton = () => {
+  return (
+    <Drawer variant="permanent">
+      <List sx={{mt:5}}>
+        <ListItem>
+          <Button variant="contained">App bar</Button>
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="Home" />
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="Profile" />
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="Setting" />
+        </ListItem>
+        <ListItem button>
+          <ListItemText primary="Notification" />
+        </ListItem>
+         
+      </List>
+    </Drawer>
+  );
+};
+export default SidebarWithButton;
+
+
+Assignment:-5
+import React from 'react';
+import { Container, Box, Button } from '@mui/material';
+
+const CenteredButton = () => {
+  return (
+    <Container sx={{ height: '100vh' }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%',gap:2 }}>
+        <Button variant="contained">Centered Button</Button>
+      </Box>
+    </Container>
+  );
+};
+export default CenteredButton;
+
+
+Assignment:-6
+import React from 'react';
+import { Container, Grid, Button } from '@mui/material';
+
+const ResponsiveGridButtons = () => {
+  return (
+    <Container>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={6} md={4}>
+          <Button variant="contained" fullWidth>Button 1</Button>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Button variant="contained" fullWidth>Button 2</Button>
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Button variant="contained" fullWidth>Button 3</Button>
+        </Grid>
+      </Grid>
+    </Container>
+  );
+};
+export default ResponsiveGridButtons;
+
+Assignment:-7
+import React from 'react';
+import { Container, Grid, Button, Box } from '@mui/material';
+
+const CornerButtons = () => {
+  return (
+    <Container sx={{ height: '100vh' }}>
+      <Grid container sx={{ height: '100%' }}>
+        
+        <Grid item xs={6} sx={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'flex-end',position:'fixed',bottom:16,right:16}}>
+          <Box sx={{ pb: 4 }}>
+            <Button variant="contained">Bottom Right</Button>
+          </Box>
+        </Grid>
+      </Grid>
+    </Container>
+  );
+};
+export default CornerButtons;
+
+Assignment:-8
+import React from 'react';
+import { Card, CardActions, CardContent, Button, Typography } from '@mui/material';
+
+const CardWithButton = () => {
+  return (
+    <Card>
+      <CardContent sx={{ml:25}}>
+        <Typography variant="h5">Abhishek .G. Choudhari</Typography>
+        <Typography variant="body2">26,Subhan Nagar pardi Nagpur 440035 <br></br>9370165188 </Typography>
+      </CardContent>
+      <CardActions>
+        <Button sx={{ml:25}} size="small">Learn More</Button>
+      </CardActions>
+    </Card>
+  );
+};
+export default CardWithButton;
+
+Assignment:-9
+import React, { useState } from 'react';
+import { Dialog, DialogActions, DialogContent, DialogTitle, Button, Typography } from '@mui/material';
+
+const DialogWithButton = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  return (
+    <div>
+      <Button sx={{ml:25}} variant="outlined" onClick={handleClickOpen}>
+        SUBMIT
+      </Button>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Confirm Action</DialogTitle>
+        <DialogContent>
+          <Typography variant="body2">Are you sure</Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Confirm</Button>
+        </DialogActions>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+        </DialogActions>
+      </Dialog>
+    </div>
+  );
+};
+export default DialogWithButton;
+
+Assignment:-10
+import React from 'react';
+import { 
+  AppBar, Toolbar, Typography, Button, Container, Grid, Box 
+} from '@mui/material';
+
+const LayoutExample = () => {
+  return (
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" sx={{ flexGrow: 1,ml:25 }}>My App</Typography>
+          <Button color="inherit">Login</Button>
+          <Button color="inherit">Signup</Button>
+        </Toolbar>
+      </AppBar>
+
+      <Container sx={{ flexGrow: 1, my: 2 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={12} sm={6} md={4}>
+            <Button variant="contained" fullWidth>Button 1</Button>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Button variant="contained" fullWidth>Button 2</Button>
+          </Grid>
+          <Grid item xs={12} sm={6} md={4}>
+            <Button variant="contained" fullWidth>Button 3</Button>
+          </Grid>
+        </Grid>
+      </Container>
+
+      <Box component="footer" sx={{ bgcolor: 'background.paper', p: 2 }}>
+        <Typography variant="body2" color="text.secondary" align="center">
+          © 2024 My App. All rights reserved.
+        </Typography>
+      </Box>
+    </Box>
+  );
+};
+export default LayoutExample;
