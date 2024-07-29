@@ -1,1 +1,340 @@
-fix all 10 bugs
+import React from 'react';
+import { Container, Box, Button } from '@mui/material';
+
+const VerticalButtons = () => {
+  return (
+    <Container>
+      <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 40 ,}}>
+        <Button variant="contained">Button 1</Button>
+        <Box sx={{ mt: 2 ,mb: 2}}></Box>
+
+        <Button variant="contained">Button 2</Button>
+        <Box sx={{ mt: 2 ,mb: 2}}></Box>
+      </Box>
+    </Container>
+  );
+};
+export default VerticalButtons;;
+
+
+HORIZONTAL 
+---------------------
+import React from 'react';
+import { Button, Box } from '@mui/material';
+
+const HorizontalButtonLayout = () => {
+return (
+<Box
+display="flex"
+justifyContent="space-between"
+alignItems="center"
+sx={{ mx: 4 }} // Adds left and right margins to the container
+>
+<Button variant="contained">Button 1</Button>
+<Button variant="contained">Button 2</Button>
+<Button variant="contained">Button 3</Button>
+</Box>
+);
+};
+
+export default HorizontalButtonLayout;
+
+appbar
+--------
+import React from 'react';
+import { AppBar, Toolbar, Typography, Button } from '@mui/material';
+
+const MyAppBar = () => {
+return (
+<AppBar position="static">
+<Toolbar>
+<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+MyApp
+</Typography>
+<Button color="inherit">Login</Button>
+<Button color="inherit">Signup</Button>
+</Toolbar>
+</AppBar>
+);
+};
+
+export default MyAppBar;
+
+sidebar
+----------
+import React, { useState } from 'react';
+import { Drawer, List, ListItem, ListItemButton, ListItemText, IconButton } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+
+const Sidebar = () => {
+const [open, setOpen] = useState(false);
+
+const toggleDrawer = () => {
+setOpen(!open);
+};
+
+return (
+<div>
+<IconButton
+edge="start"
+color="inherit"
+aria-label="menu"
+onClick={toggleDrawer}
+sx={{ marginRight: 2 }}
+>
+<MenuIcon />
+</IconButton>
+<Drawer
+anchor="left"
+open={open}
+onClose={toggleDrawer}
+sx={{ width: 240, flexShrink: 0 }}
+>
+<List>
+<ListItem>
+<ListItemButton>
+<ListItemText primary="Home" />
+</ListItemButton>
+</ListItem>
+<ListItem>
+<ListItemButton>
+<ListItemText primary="Profile" />
+</ListItemButton>
+</ListItem>
+<ListItem>
+<ListItemButton>
+<ListItemText primary="Settings" />
+</ListItemButton>
+</ListItem>
+</List>
+</Drawer>
+</div>
+);
+};
+
+export default Sidebar;
+
+centerbutton
+------------------
+import React from 'react';
+import { Box, Button } from '@mui/material';
+
+const CenteredButton = () => {
+return (
+<Box
+display="flex"
+flexDirection="column"
+justifyContent="center"
+alignItems="center"
+height="100vh" // Full viewport height
+gap={2} // Spacing above and below the button
+>
+<Button variant="contained">Centered Button</Button>
+</Box>
+);
+};
+
+export default CenteredButton;
+
+
+responsive
+----------------
+import React from 'react';
+import { Grid, Button, Box } from '@mui/material';
+
+const ResponsiveGrid = () => {
+return (
+<Box p={2}> {/* Padding around the grid */}
+<Grid container spacing={2}>
+<Grid item xs={12} sm={6} md={4} lg={3}>
+<Button variant="contained" fullWidth>
+Button 1
+</Button>
+</Grid>
+<Grid item xs={12} sm={6} md={4} lg={3}>
+<Button variant="contained" fullWidth>
+Button 2
+</Button>
+</Grid>
+<Grid item xs={12} sm={6} md={4} lg={3}>
+<Button variant="contained" fullWidth>
+Button 3
+</Button>
+</Grid>
+<Grid item xs={12} sm={6} md={4} lg={3}>
+<Button variant="contained" fullWidth>
+Button 4
+</Button>
+</Grid>
+<Grid item xs={12} sm={6} md={4} lg={3}>
+<Button variant="contained" fullWidth>
+Button 5
+</Button>
+</Grid>
+<Grid item xs={12} sm={6} md={4} lg={3}>
+<Button variant="contained" fullWidth>
+Button 6
+</Button>
+</Grid>
+<Grid item xs={12} sm={6} md={4} lg={3}>
+<Button variant="contained" fullWidth>
+Button 7
+</Button>
+</Grid>
+<Grid item xs={12} sm={6} md={4} lg={3}>
+<Button variant="contained" fullWidth>
+Button 8
+</Button>
+</Grid>
+</Grid>
+</Box>
+);
+};
+
+export default ResponsiveGrid;
+
+fixed button
+----------------
+import React from 'react';
+import { Button, Box } from '@mui/material';
+
+const FixedButton = () => {
+return (
+<Box
+sx={{
+position: 'fixed',
+bottom: 16,
+right: 16,
+}}
+>
+<Button variant="contained">Fixed Button</Button>
+</Box>
+);
+};
+
+export default FixedButton;
+
+
+card 
+--------
+import React from 'react';
+import { Card, CardContent, CardActions, Button, Typography } from '@mui/material';
+
+const MyCard = () => {
+return (
+<Card sx={{ maxWidth: 345 }}>
+<CardContent>
+<Typography variant="h5" component="div">
+Card Title
+</Typography>
+<Typography variant="body2" color="text.secondary">
+This is a description of the card. It provides some additional details about the content of the card.
+</Typography>
+</CardContent>
+<CardActions>
+<Button size="small" variant="contained">Accept</Button>
+<Button size="small" variant="outlined">Decline</Button>
+</CardActions>
+</Card>
+);
+};
+
+export default MyCard;
+
+Dialog with Confirmation Buttons
+---------------------------------------------
+import React from 'react';
+import { Card, CardContent, CardActions, Button, Typography } from '@mui/material';
+
+const MyCard = () => {
+return (
+<Card sx={{ maxWidth: 345 }}>
+<CardContent>
+<Typography variant="h5" component="div">
+Card Title
+</Typography>
+<Typography variant="body2" color="text.secondary">
+This is a description of the card. It provides some additional details about the content of the card.
+</Typography>
+</CardContent>
+<CardActions>
+<Button size="small" variant="contained">Accept</Button>
+<Button size="small" variant="outlined">Decline</Button>
+</CardActions>
+</Card>
+);
+};
+
+export default MyCard;
+
+
+Layout with Header, Main Content, and Footer
+---------------------------------------------------------------
+import React from 'react';
+import { AppBar, Toolbar, Typography, Container, Grid, Button, Box } from '@mui/material';
+
+const Layout = () => {
+return (
+<Box
+display="flex"
+flexDirection="column"
+minHeight="100vh" // Ensures the layout takes up the full viewport height
+>
+{/* Header */}
+<AppBar position="static">
+<Toolbar>
+<Typography variant="h6">My App</Typography>
+</Toolbar>
+</AppBar>
+
+{/* Main Content */}
+<Box
+component="main"
+flex={1} // Allows the main content to take up the remaining space
+p={3} // Adds padding around the content
+>
+<Container>
+<Grid container spacing={2}>
+<Grid item xs={12} sm={6} md={4}>
+<Button variant="contained" fullWidth>Button 1</Button>
+</Grid>
+<Grid item xs={12} sm={6} md={4}>
+<Button variant="contained" fullWidth>Button 2</Button>
+</Grid>
+<Grid item xs={12} sm={6} md={4}>
+<Button variant="contained" fullWidth>Button 3</Button>
+</Grid>
+<Grid item xs={12} sm={6} md={4}>
+<Button variant="contained" fullWidth>Button 4</Button>
+</Grid>
+<Grid item xs={12} sm={6} md={4}>
+<Button variant="contained" fullWidth>Button 5</Button>
+</Grid>
+<Grid item xs={12} sm={6} md={4}>
+<Button variant="contained" fullWidth>Button 6</Button>
+</Grid>
+</Grid>
+</Container>
+</Box>
+
+{/* Footer */}
+<Box
+component="footer"
+sx={{
+position: 'relative',
+bottom: 0,
+width: '100%',
+py: 2, // Adds vertical padding
+bgcolor: 'background.paper', // Sets background color
+textAlign: 'center'
+}}
+>
+<Typography variant="body2" color="textSecondary">
+© 2024 My App. All rights reserved.
+</Typography>
+</Box>
+</Box>
+);
+};
+
+export default Layout;
