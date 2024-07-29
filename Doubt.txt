@@ -1,0 +1,9 @@
+sir
+how to allien 2 buttom on one line and one box.....?
+
+I write code for side bar but in the uotput side bar is not comming 
+why is it not comming and what is problem......?
+
+how to defind Responsive grid With Dynamic Buttons.....?
+
+plese explain Dialog with Confirmation Buttons and  Layout with Header, Main Content, and Footer
